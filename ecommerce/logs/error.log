@@ -1,0 +1,5 @@
+[2025-05-18T20:38:57.427Z] ValidationError: Produto validation failed: categoria: `Roupas` is not a valid enum value for path `categoria`.
+    at Document.invalidate (C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
+    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\document.js:3104:17
+    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)

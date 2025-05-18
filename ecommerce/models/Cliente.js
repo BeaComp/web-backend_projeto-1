@@ -5,11 +5,11 @@ const ClienteSchema = new mongoose.Schema({
   email: { type: String, required: [true, 'O e-mail é obrigatório'], unique: [true, 'Já existe esse e-mail cadastrado'] },
   endereco: {
     type: new mongoose.Schema({
-      rua: { type: String, required: true },
-      numero: { type: String, required: true },
-      cidade: { type: String, required: true },
-      estado: { type: String, required: true },
-      cep: { type: String, required: true }
+      rua: { type: String, required: [true, 'A rua é obrigatória'] },
+      numero: { type: String, required: [true, 'O número é obrigatório'] },
+      cidade: { type: String, required: [true, 'A cidade é obrigatória'] },
+      estado: { type: String, required: [true, 'O estado é obrigatório'] },
+      cep: { type: String, required: [true, 'O CEP é obrigatório'] }
     }),
     required: [true, 'O endereço é obrigatório']
   },
