@@ -18,11 +18,6 @@ const ProdutoSchema = new mongoose.Schema({
   ativo: {
     type: Boolean,
     default: true
-  },
-  categoria: {
-    type: String,
-    enum: ['eletronico', 'roupa', 'alimento'],
-    required: [true, 'A categoria é obrigatória']
   }
 });
 
