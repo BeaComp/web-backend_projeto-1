@@ -1,53 +1,15 @@
-[2025-05-18T20:38:57.427Z] ValidationError: Produto validation failed: categoria: `Roupas` is not a valid enum value for path `categoria`.
-    at Document.invalidate (C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
-    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\document.js:3104:17
-    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
-[2025-05-18T20:40:22.634Z] MongooseError: Já existe esse e-mail cadastrado
-    at Schema._transformDuplicateKeyError (C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
-    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\model.js:498:30
-    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\model.js:379:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-[2025-05-18T20:44:23.198Z] ValidationError: Produto validation failed: categoria: A categoria é obrigatória
-    at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
-[2025-05-18T20:48:41.026Z] ValidationError: Produto validation failed: categoria: A categoria é obrigatória
-    at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
-[2025-05-18T20:49:08.079Z] MongooseError: Já existe esse e-mail cadastrado
-    at Schema._transformDuplicateKeyError (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:498:30
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:379:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-[2025-05-18T20:53:16.611Z] MongooseError: Já existe esse e-mail cadastrado
-    at Schema._transformDuplicateKeyError (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:498:30
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:379:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-[2025-05-18T20:53:16.619Z] ReferenceError: testarValidacoes is not defined
-    at main (file:///C:/Users/peher/Documentos/GitHub/web-backend_projeto/ecommerce/app.js:14:4)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-[2025-05-18T20:53:40.604Z] MongooseError: Já existe esse e-mail cadastrado
-    at Schema._transformDuplicateKeyError (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:498:30
-    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\model.js:379:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-[2025-05-18T20:53:40.613Z] ValidationError: Cliente validation failed: endereco: O endereço é obrigatório, email: O e-mail é obrigatório, nome: O nome é obrigatório
+[2025-05-18T21:44:50.578Z] ValidationError: Cliente validation failed: endereco: O endereço é obrigatório, email: O e-mail é obrigatório, nome: O nome é obrigatório
     at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schema\subdocument.js:269:14
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
     at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
-[2025-05-18T20:53:40.614Z] ValidationError: Produto validation failed: nome: O nome deve ter no mínimo 3 caracteres, descricao: A descrição pode ter no máximo 200 caracteres, estoque: O estoque não pode ser negativo
+[2025-05-18T21:44:50.579Z] ValidationError: Produto validation failed: nome: O nome deve ter no mínimo 3 caracteres, descricao: A descrição pode ter no máximo 200 caracteres, estoque: O estoque não pode ser negativo
     at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
     at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
-[2025-05-18T20:53:40.615Z] ValidationError: Pedido validation failed: clienteId: O cliente é obrigatório, produtos.0.produtoId: O produto é obrigatório, produtos.0.quantidade: A quantidade deve ser no mínimo 1
+[2025-05-18T21:44:50.580Z] ValidationError: Pedido validation failed: clienteId: O cliente é obrigatório, produtos.0.produtoId: O produto é obrigatório, produtos.0.quantidade: A quantidade deve ser no mínimo 1
     at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
     at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
