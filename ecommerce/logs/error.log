@@ -3,3 +3,8 @@
     at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\document.js:3104:17
     at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
     at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+[2025-05-18T20:40:22.634Z] MongooseError: Já existe esse e-mail cadastrado
+    at Schema._transformDuplicateKeyError (C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
+    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\model.js:498:30
+    at C:\Users\faria\Documents\GitHub\web-backend_projeto-1\ecommerce\node_modules\mongoose\lib\model.js:379:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

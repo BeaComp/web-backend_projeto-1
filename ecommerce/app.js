@@ -28,7 +28,6 @@ async function main() {
       nome: 'Camisa Polo',
       descricao: 'Camisa polo de algodão',
       preco: 89.90,
-      categoria: 'Roupas',
       estoque: 20,
       ativo: true
     });
