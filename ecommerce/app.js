@@ -12,7 +12,7 @@ async function main() {
         //Funções para disparar erros
         await triggerErrors();
 
-        await editarClientePorEmail({
+        await editClientByEmail({
             nome: 'João da Silva',
             endereco: {
                 rua: 'Rua Nova',
