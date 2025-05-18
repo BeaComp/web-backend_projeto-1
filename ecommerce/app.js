@@ -1,6 +1,6 @@
 // index.js
 import dotenv from 'dotenv';
-import { conectarDB } from './database/conection.js';
+import { conectarDB } from './database/connection.js';
 
 dotenv.config();
 
