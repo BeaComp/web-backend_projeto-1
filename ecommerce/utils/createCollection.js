@@ -3,6 +3,7 @@ import Produto from '../models/produto.js';
 import Pedido from '../models/Pedido.js';
 import { logError } from './logger.js';
 
+
 export async function createInitialData() {
     let cliente, produto;
 
@@ -50,7 +51,10 @@ export async function createInitialData() {
                 status: 'pendente'
             });
             await pedido.save();
-            console.log('Pedido criado com sucesso!');
+            console.log('Pedido criado com sucesso!', pedido._id);
+
+            console.log('Atualizando status do pedido para aprovado')
+            await updateOrderStatusById(pedido._id)
         } catch (error) {
             logError(error);
             console.error('Erro ao criar pedido:', error.message);
@@ -117,4 +121,26 @@ export async function editClientByEmail(novosDados) {
         logError(error);
         console.error('Erro ao atualizar cliente:', error.message);
     }
+}
+
+export async function updateOrderStatusById(pedidoId) {
+    const novoStatus = 'aprovado'
+
+  try {
+    const pedidoAtualizado = await Pedido.findByIdAndUpdate(
+      pedidoId,
+      { status: novoStatus },
+      { new: true }
+    );
+
+    if (!pedidoAtualizado) {
+      console.error(`Pedido com ID ${pedidoId} não encontrado.`);
+      return;
+    }
+
+    console.log('Status do pedido atualizado com sucesso:', pedidoAtualizado);
+  } catch (error) {
+    logError(error);
+    console.error('Erro ao atualizar status do pedido:', error.message);
+  }
 }
