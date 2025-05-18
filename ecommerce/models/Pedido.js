@@ -4,19 +4,19 @@ const PedidoSchema = new mongoose.Schema({
   clienteId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Cliente',
-    required: true
+    required: [true, 'O cliente é obrigatório']
   },
   produtos: [
     {
       produtoId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Produto',
-        required: true
+        required: [true, 'O produto é obrigatório']
       },
       quantidade: {
         type: Number,
-        required: true,
-        min: 1
+        required: [true, 'A quantidade é obrigatório'],
+        min: [1, 'A quantidade deve ser no mínimo 1']
       }
     }
   ],
