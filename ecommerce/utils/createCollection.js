@@ -10,7 +10,7 @@ export async function createInitialData() {
   try {
     cliente = new Cliente({
       nome: 'João Silva',
-      email: 'joao2.silva@example.com',
+      email: 'joao.silva@example.com',
       endereco: {
         rua: 'Rua das Flores',
         numero: '123',
@@ -61,6 +61,7 @@ export async function createInitialData() {
 }
 
 export async function triggerErrors() {
+
      try {
        const clienteInvalido = new Cliente({});
        await clienteInvalido.save();

@@ -10,8 +10,10 @@ async function main() {
     await ConnectionDB();
     console.log('Conectado ao banco!');
 
+    //Funções para testar a criação
    await createInitialData();
-   await triggerErrors();
+    //Funções para disparar erros
+   await triggerErrors();   
 
   } catch (error) {
     logError(error);
