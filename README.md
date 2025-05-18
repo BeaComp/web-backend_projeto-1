@@ -1,48 +1,112 @@
 # Projeto 1 – Programação Web Back-End
 
-## 🧾 Descrição Geral
+# E-commerce (Node.js e MongoDB) — Projeto 1
 
-Este projeto consiste no desenvolvimento de uma biblioteca de acesso a SGBDs (Sistemas Gerenciadores de Banco de Dados), utilizando Node.js. A biblioteca é composta por um conjunto de classes que representam entidades de um banco de dados, relacionadas a uma temática de e-commerce, com foco em **armazenamento e busca de produtos** em uma loja virtual.
+**Disciplina:** Programação Web Back-End
+**Professores:** Monique Emídio de Oliveira, Willian Massami Watanabe
 
-O projeto contempla a implementação de métodos para **inserção, busca, atualização e exclusão de dados**, além do **tratamento e registro de erros** por meio de logs.
+## 📌 Descrição
 
-## 🛒 Temática: E-commerce
+Este projeto simula um e-commerce (armazenamento de produtos, pedidos, clientes), desenvolvido com Node.js puro e MongoDB, sem uso de bibliotecas externas além do driver oficial do Mongo. O objetivo é demonstrar o uso de classes para representar entidades de um banco de dados, com operações básicas (inserção, busca e deleção), validação de campos obrigatórios e tratamento de exceções com geração de logs.
 
-A aplicação simula uma estrutura de dados semelhante a plataformas como Mercado Livre, abrangendo:
+## 🏗️ Estrutura do Projeto
 
-- Cadastro de produtos e categorias
-- Registro de usuários e vendedores
-- Gerenciamento de pedidos e carrinho de compras
+```
+/ecommerce
+  ├── database/
+  │   └── connection.js           # Conexão com MongoDB
+  ├── models/
+  │   ├── Cliente.js         # Classe Cliente
+  │   ├── Produto.js         # Classe Produto
+  │   └── Pedido.js          # Classe Pedido
+  ├── utils/
+  │   ├── createCollection.js # Funções prontas para criar e simular erros
+  │   └── logger.js           # Logger de erros
+  ├── logs/
+  │   └── error.log          # Arquivo de log de erros
+  └── app.js                 # Script de testes
+```
 
-## 🧩 Funcionalidades da Biblioteca
+## 📦 Entidades e Atributos
 
-- Definição de entidades com estrutura orientada a objetos:
-  - `Produto`
-  - `Categoria`
-  - `Usuario`
-  - `Pedido`
-  - `Carrinho`
-- Métodos CRUD para interação com o banco de dados
-- Conexão e execução de queries com segurança (uso de queries parametrizadas)
-- Implementação de tratamento de erros e geração de logs com detalhamento de exceções
-- Modularização do código e boas práticas de desenvolvimento
+O projeto implementa 3 entidades principais:
 
-## ⚙️ Tecnologias Utilizadas
+### Cliente
+- `nome` (obrigatório)
+- `email` (obrigatório)
+- `endereco` (obrigatório)
 
-- **Node.js**
-- **MySQL** ou **PostgreSQL** (dependendo da escolha do grupo)
-- **npm packages**:
-  - `mysql2` ou `pg`
-  - `dotenv`
-  - `winston` (para logging)
-  - `nodemon` (em desenvolvimento)
+### Produto
+- `nome` (obrigatório)
+- `descricao`
+- `estoque`
+- `ativo`
 
-## 🎯 Objetivo Pedagógico
+### Pedido
+- `cliente_id` (referência ao cliente)
+- `produtos` (Lista de produtos, onde cada item contém): 
+-- - `produto_id` (Referência ao produto)
+-- - `quantidade` (Número inteiro representando a quantidade desse produto no pedido (mínimo 1))
+- `dataPedido` (timestamp ISO)
+- `status` (pendente, aprovado, enviado, entregue)
 
-Este projeto tem como objetivo capacitar os alunos a:
+## ✅ Funcionalidades Implementadas
 
-- Desenvolver classes orientadas a objetos com Node.js
-- Implementar a persistência de dados em um banco relacional
-- Aplicar técnicas de tratamento de erros e geração de logs
-- Trabalhar com estrutura modular e boas práticas em projetos back-end
+- Criação de registros no banco
+- Atualiza/Edita/Exclui os dados
+- Validação de campos obrigatórios
+- Tratamento de exceções com try/catch
+- Registro de erros em `logs/error.log`
 
+## 💾 Requisitos
+
+- Node.js instalado
+- MongoDB local ou em nuvem (URI de conexão deve ser configurada em `database/connection.js`)
+
+## 🚀 Como Executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu_usuario/web-backend_projeto-1.git
+cd ecommerce
+```
+
+Instale a dependência do MongoDB:
+
+```bash
+npm install
+```
+
+Configure a URI de conexão no arquivo:  
+`./database/connection.js`
+
+Execute o arquivo de testes:
+
+```bash
+node index.js
+```
+
+O console mostrará os resultados das operações e, em caso de erros, eles serão registrados em `logs/error.log`.
+
+## 🧪 Teste
+
+O arquivo `app.js` contém um teste simulando:
+
+- Criação de clientes, produto e pedidos
+- Edição dos dados do cliente
+- Busca pelo cliente
+- Busca pelo produto
+- Edição do produto
+- Remoção do produto
+- Atualização dos pedidos para aprovado/enviado
+- Tentativa de criar registros com campos faltantes (para gerar erros)
+
+## 📁 Observações Finais
+
+- O projeto foi desenvolvido sem frameworks ou bibliotecas adicionais.
+- Toda a lógica de persistência foi feita manualmente com o driver nativo do MongoDB.
+- Os logs são armazenados no arquivo `logs/error.log` de forma simples e direta.
+- Desenvolvido como parte do Projeto 1 da disciplina Programação Web Back-End.
+
+**Alunos:** Beatriz Cristina de Faria RA: 2349710; Pedro Henrique da Rocha RA: 2346575
