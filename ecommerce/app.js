@@ -1,6 +1,6 @@
 import { ConnectionDB, closeConnection } from './database/connection.js';
 import { logError } from './utils/logger.js';
-import { createInitialData, triggerErrors, editClientByEmail, searchProductsByName } from './utils/createCollection.js';
+import { createInitialData, triggerErrors, editClientByEmail, searchProductsByName, searchCustomerByEmail, deleteClientByEmail,editProductByName, deleteProductByName} from './utils/createCollection.js';
 
 async function main() {
     try {
@@ -24,7 +24,11 @@ async function main() {
         })
         //Função para buscar produto
         await searchProductsByName('Notebook')
-        
+        await searchCustomerByEmail('maria.oliveira@example.com')
+        await deleteClientByEmail('maria.oliveira@example.com')
+        await editProductByName('Monitor xaing', { descricao: 'Monitor 8K UHD atualizado', estoque: 80 });
+        await deleteProductByName('Monitor xaing');
+
     } catch (error) {
         logError(error);
         console.error('Erro:', error.message);

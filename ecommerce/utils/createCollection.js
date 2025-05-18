@@ -26,6 +26,44 @@ export async function createInitialData() {
         console.error('Erro ao criar cliente:', error.message);
     }
 
+    try {
+        const cliente1 = new Cliente({
+            nome: 'Maria Oliveira',
+            email: 'maria.oliveira@example.com',
+            endereco: {
+                rua: 'Avenida Central',
+                numero: '456',
+                cidade: 'Rio de Janeiro',
+                estado: 'RJ',
+                cep: '12345-678'
+            }
+        });
+        await cliente1.save();
+        console.log('Cliente criado com sucesso!');
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao criar cliente 1:', error.message);
+    }
+
+    try {
+        const cliente2 = new Cliente({
+            nome: 'Carlos Pereira',
+            email: 'carlos.pereira@example.com',
+            endereco: {
+                rua: 'Rua do Comércio',
+                numero: '789',
+                cidade: 'Belo Horizonte',
+                estado: 'MG',
+                cep: '23456-789'
+            }
+        });
+        await cliente2.save();
+        console.log('Cliente criado com sucesso!');
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao criar cliente 2:', error.message);
+    }
+
     // Criar Produto
     try {
         produto = new Produto({
@@ -192,4 +230,68 @@ export async function searchProductsByName(nome) {
         console.error('Erro ao buscar produtos por nome:', error.message);
         return [];
     }
+}
+
+export async function searchCustomerByEmail(email) {
+  try {
+    const cliente = await Cliente.findOne({ email });
+    if (cliente) {
+      console.log('Cliente encontrado:', cliente);
+    } else {
+      console.log('Nenhum cliente encontrado com esse e-mail.');
+    }
+  } catch (error) {
+    console.error('Erro ao buscar cliente:', error.message);
+  }
+}
+
+export async function deleteClientByEmail(email) {
+  try {
+    const resultado = await Cliente.findOneAndDelete({ email });
+    if (resultado) {
+      console.log('Cliente excluído com sucesso:', resultado);
+    } else {
+      console.log('Cliente não encontrado para exclusão.');
+    }
+  } catch (error) {
+    console.error('Erro ao excluir cliente:', error.message);
+  }
+}
+
+export async function editProductByName(nome, novosDados) {
+  try {
+    const produtoAtualizado = await Produto.findOneAndUpdate(
+      { nome },
+      novosDados,
+      { new: true } // Retorna o produto atualizado
+    );
+
+    if (produtoAtualizado) {
+      console.log('Produto atualizado com sucesso:', produtoAtualizado);
+      return produtoAtualizado;
+    } else {
+      console.log('Produto não encontrado para atualização.');
+      return null;
+    }
+  } catch (error) {
+    logError(error);
+    console.error('Erro ao atualizar produto:', error.message);
+  }
+}
+
+export async function deleteProductByName(nome) {
+  try {
+    const produtoExcluido = await Produto.findOneAndDelete({ nome });
+
+    if (produtoExcluido) {
+      console.log('Produto excluído com sucesso:', produtoExcluido);
+      return produtoExcluido;
+    } else {
+      console.log('Produto não encontrado para exclusão.');
+      return null;
+    }
+  } catch (error) {
+    logError(error);
+    console.error('Erro ao excluir produto:', error.message);
+  }
 }
