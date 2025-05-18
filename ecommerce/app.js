@@ -1,6 +1,6 @@
 import { ConnectionDB, closeConnection } from './database/connection.js';
 import Produto from './models/produto.js';
-import { logError } from './utils/logger.js'; // 👈 importar
+import { logError } from './utils/logger.js';
 
 async function main() {
   try {
@@ -9,15 +9,15 @@ async function main() {
 
     const produtoComErro = new Produto({
       descricao: 'Produto sem nome',
-      estoque: -5, 
+      estoque: -5,
       ativo: true,
-      categoria: 'categoria-invalida' 
+      categoria: 'categoria-invalida'
     });
 
-    await produtoComErro.save(); 
+    await produtoComErro.save();
 
   } catch (error) {
-    logError(error); 
+    logError(error);
     console.error('Erro:', error.message);
   } finally {
     await closeConnection();
