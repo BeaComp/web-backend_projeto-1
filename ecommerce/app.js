@@ -1,31 +1,23 @@
-// index.js
 import { ConnectionDB, closeConnection } from './database/connection.js';
-import Produto from './models/produto.js'; 
+import Produto from './models/produto.js';
+import { logError } from './utils/logger.js'; // 👈 importar
 
 async function main() {
   try {
-    await ConnectionDB(); 
+    await ConnectionDB();
     console.log('Conectado ao banco!');
 
-    const novoProduto = new Produto({
-      nome: 'Notebook',
-      descricao: 'Notebook gamer',
-      estoque: 10,
+    const produtoComErro = new Produto({
+      descricao: 'Produto sem nome',
+      estoque: -5, 
       ativo: true,
+      categoria: 'categoria-invalida' 
     });
 
-    const produtoSalvo = await novoProduto.save();
-    console.log('Produto cadastrado:', produtoSalvo);
+    await produtoComErro.save(); 
 
-    const produtos = await Produto.find();
-    console.log('📋 Lista de produtos:');
-    produtos.forEach((p, i) => {
-      console.log(`${i + 1}. ${p.nome} - Estoque: ${p.estoque} - Ativo: ${p.ativo}`);
-    });
-
-
-    
   } catch (error) {
+    logError(error); 
     console.error('Erro:', error.message);
   } finally {
     await closeConnection();

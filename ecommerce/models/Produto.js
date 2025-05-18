@@ -1,10 +1,29 @@
 import mongoose from 'mongoose';
 
 const ProdutoSchema = new mongoose.Schema({
-  nome: { type: String, required: true },
-  descricao: String,
-  estoque: { type: Number, default: 0 },
-  ativo: { type: Boolean, default: true }
+  nome: {
+    type: String,
+    required: [true, 'O nome é obrigatório'],
+    minlength: [3, 'O nome deve ter no mínimo 3 caracteres']
+  },
+  descricao: {
+    type: String,
+    maxlength: [200, 'A descrição pode ter no máximo 200 caracteres']
+  },
+  estoque: {
+    type: Number,
+    default: 0,
+    min: [0, 'O estoque não pode ser negativo']
+  },
+  ativo: {
+    type: Boolean,
+    default: true
+  },
+  categoria: {
+    type: String,
+    enum: ['eletronico', 'roupa', 'alimento'],
+    required: [true, 'A categoria é obrigatória']
+  }
 });
 
 const Produto = mongoose.model('Produto', ProdutoSchema);
