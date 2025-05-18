@@ -8,17 +8,17 @@ export async function ConnectionDB() {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-    console.log('✅ MongoDB (Mongoose) conectado!');
+    console.log('MongoDB (Mongoose) conectado!');
   } catch (error) {
-    console.error('❌ Erro ao conectar com Mongoose:', error.message);
+    console.error('Erro ao conectar com Mongoose:', error.message);
   }
 }
 
 export async function closeConnection() {
   try {
     await mongoose.connection.close();
-    console.log('🔌 Conexão com MongoDB (Mongoose) fechada!');
+    console.log('Conexão com MongoDB (Mongoose) fechada!');
   } catch (error) {
-    console.error('❌ Erro ao fechar a conexão:', error.message);
+    console.error('Erro ao fechar a conexão:', error.message);
   }
 }
