@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 
+// alterar
 export function logError(error) {
   const timestamp = new Date().toISOString();
   const logMessage = `[${timestamp}] ${error.stack || error}\n`;
