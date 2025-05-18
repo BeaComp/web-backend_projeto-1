@@ -23,22 +23,6 @@ async function main() {
             }
         })
 
-        //Funções para testar a criação
-        await createInitialData();
-        //Funções para disparar erros
-        await triggerErrors();
-        //Funções para editar 
-        await editClientByEmail({
-            nome: 'João da Silva',
-            endereco: {
-                rua: 'Rua Nova',
-                numero: '456',
-                cidade: 'Campinas',
-                estado: 'SP',
-                cep: '13000-000'
-            }
-        })
-
     } catch (error) {
         logError(error);
         console.error('Erro:', error.message);
