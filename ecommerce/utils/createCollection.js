@@ -96,3 +96,25 @@ export async function triggerErrors() {
        console.error('Erro Pedido:', error.message);
      }
 }
+
+export async function editarClientePorEmail(novosDados) {
+   const email = 'joao.silva@example.com'
+    try {
+      const clienteAtualizado = await Cliente.findOneAndUpdate(
+        { email },
+        { $set: novosDados },
+        { new: true } 
+      );
+
+      if (!clienteAtualizado) {
+        console.error(`Cliente com e-mail ${email} não encontrado.`);
+        logError(`Cliente com e-mail ${email} não encontrado.`);
+        return;
+      }
+
+      console.log('Cliente atualizado com sucesso:', clienteAtualizado);
+    } catch (error) {
+      logError(error);
+      console.error('Erro ao atualizar cliente:', error.message);
+    }
+}

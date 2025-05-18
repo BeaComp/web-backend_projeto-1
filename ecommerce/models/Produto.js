@@ -4,7 +4,8 @@ const ProdutoSchema = new mongoose.Schema({
   nome: {
     type: String,
     required: [true, 'O nome é obrigatório'],
-    minlength: [3, 'O nome deve ter no mínimo 3 caracteres']
+    minlength: [3, 'O nome deve ter no mínimo 3 caracteres'],
+    unique: [true, 'Já existe um produto cadastrado com esse nome']
   },
   descricao: {
     type: String,
