@@ -1,7 +1,4 @@
 import { MongoClient } from 'mongodb';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const uri = 'mongodb://localhost:27017';
 const dbName = 'ecommerce';
