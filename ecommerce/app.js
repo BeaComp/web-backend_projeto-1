@@ -1,6 +1,6 @@
 import { ConnectionDB, closeConnection } from './database/connection.js';
 import { logError } from './utils/logger.js';
-import { createInitialData, triggerErrors, editClientByEmail } from './utils/createCollection.js';
+import { createInitialData, triggerErrors, editClientByEmail, searchProductsByName } from './utils/createCollection.js';
 
 async function main() {
     try {
@@ -11,7 +11,7 @@ async function main() {
         await createInitialData();
         //Funções para disparar erros
         await triggerErrors();
-
+        //Função para editar dados do cliente
         await editClientByEmail({
             nome: 'João da Silva',
             endereco: {
@@ -22,7 +22,9 @@ async function main() {
                 cep: '13000-000'
             }
         })
-
+        //Função para buscar produto
+        await searchProductsByName('Notebook')
+        
     } catch (error) {
         logError(error);
         console.error('Erro:', error.message);

@@ -3,7 +3,6 @@ import Produto from '../models/produto.js';
 import Pedido from '../models/Pedido.js';
 import { logError } from './logger.js';
 
-
 export async function createInitialData() {
     let cliente, produto;
 
@@ -126,21 +125,42 @@ export async function editClientByEmail(novosDados) {
 export async function updateOrderStatusById(pedidoId) {
     const novoStatus = 'aprovado'
 
-  try {
-    const pedidoAtualizado = await Pedido.findByIdAndUpdate(
-      pedidoId,
-      { status: novoStatus },
-      { new: true }
-    );
+    try {
+        const pedidoAtualizado = await Pedido.findByIdAndUpdate(
+            pedidoId,
+            { status: novoStatus },
+            { new: true }
+        );
 
-    if (!pedidoAtualizado) {
-      console.error(`Pedido com ID ${pedidoId} não encontrado.`);
-      return;
+        if (!pedidoAtualizado) {
+            console.error(`Pedido com ID ${pedidoId} não encontrado.`);
+            return;
+        }
+
+        console.log('Status do pedido atualizado com sucesso:', pedidoAtualizado);
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao atualizar status do pedido:', error.message);
     }
+}
 
-    console.log('Status do pedido atualizado com sucesso:', pedidoAtualizado);
-  } catch (error) {
-    logError(error);
-    console.error('Erro ao atualizar status do pedido:', error.message);
-  }
+export async function searchProductsByName(nome) {
+    try {
+        const produtos = await Produto.find({
+            nome: { $regex: nome, $options: 'i' }
+        });
+
+        if (produtos.length === 0) {
+            console.log('Nenhum produto encontrado com esse nome.');
+        } else {
+            console.log(`Foram encontrados ${produtos.length} produto(s):`);
+            console.log(produtos);
+        }
+
+        return produtos;
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao buscar produtos por nome:', error.message);
+        return [];
+    }
 }
