@@ -1,11 +1,19 @@
-// models/produto.js
 import mongoose from 'mongoose';
 
-const ProdutoSchema = new mongoose.Schema({
+const ClienteSchema = new mongoose.Schema({
   nome: { type: String, required: true },
-  descricao: String,
-  estoque: Number,
-  ativo: Boolean,
+  email: { type: String, required: true, unique: true },
+  endereco: {
+    type: new mongoose.Schema({
+      rua: { type: String, required: true },
+      numero: { type: String, required: true },
+      cidade: { type: String, required: true },
+      estado: { type: String, required: true },
+      cep: { type: String, required: true }
+    }),
+    required: true
+  },
 });
 
-export default mongoose.model('Produto', ProdutoSchema);
+const Cliente = mongoose.model('Cliente', ClienteSchema);
+export default Cliente;

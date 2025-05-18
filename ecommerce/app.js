@@ -6,7 +6,7 @@ async function main() {
   try {
     await ConnectionDB(); 
     console.log('Conectado ao banco!');
-    console.log('tentando cadastrar');
+
     const novoProduto = new Produto({
       nome: 'Notebook',
       descricao: 'Notebook gamer',
@@ -17,6 +17,14 @@ async function main() {
     const produtoSalvo = await novoProduto.save();
     console.log('Produto cadastrado:', produtoSalvo);
 
+    const produtos = await Produto.find();
+    console.log('📋 Lista de produtos:');
+    produtos.forEach((p, i) => {
+      console.log(`${i + 1}. ${p.nome} - Estoque: ${p.estoque} - Ativo: ${p.ativo}`);
+    });
+
+
+    
   } catch (error) {
     console.error('Erro:', error.message);
   } finally {
