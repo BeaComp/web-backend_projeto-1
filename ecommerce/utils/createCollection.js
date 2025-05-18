@@ -41,6 +41,35 @@ export async function createInitialData() {
         console.error('Erro ao criar produto:', error.message);
     }
 
+    try {
+        produto = new Produto({
+            nome: 'Notebook positivo',
+            descricao: 'Notebook gamer super poderoso',
+            estoque: 100,
+            ativo: true
+        });
+        await produto.save();
+        console.log('Produto criado com sucesso!');
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao criar produto:', error.message);
+    }
+
+    try {
+        produto = new Produto({
+            nome: 'Monitor xaing',
+            descricao: 'Monitor 8k full hd',
+            estoque: 100,
+            ativo: true
+        });
+        await produto.save();
+        console.log('Produto criado com sucesso!');
+    } catch (error) {
+        logError(error);
+        console.error('Erro ao criar produto:', error.message);
+    }
+
+
     // Criar Pedido (somente se cliente e produto foram criados)
     if (cliente && produto) {
         try {
