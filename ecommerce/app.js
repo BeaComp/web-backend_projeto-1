@@ -1,16 +1,27 @@
 // index.js
-import { ConnectionDB } from './database/connection.js';
-import { closeConnection } from './database/connection.js';
+import { ConnectionDB, closeConnection } from './database/connection.js';
+import Produto from './models/produto.js'; 
 
 async function main() {
   try {
-    const db = await ConnectionDB();
-    console.log(`Conectado ao banco: ${db.databaseName}`);
+    await ConnectionDB(); 
+    console.log('Conectado ao banco!');
+    console.log('tentando cadastrar');
+    const novoProduto = new Produto({
+      nome: 'Notebook',
+      descricao: 'Notebook gamer',
+      estoque: 10,
+      ativo: true,
+    });
 
-    console.log(`Fechando conexão com o banco: ${db.databaseName}`)
-    await fecharConexao();
+    const produtoSalvo = await novoProduto.save();
+    console.log('Produto cadastrado:', produtoSalvo);
+
   } catch (error) {
-    console.error('Erro ao conectar no MongoDB:', error.message);
+    console.error('Erro:', error.message);
+  } finally {
+    await closeConnection();
+    console.log('Conexão fechada!');
   }
 }
 
