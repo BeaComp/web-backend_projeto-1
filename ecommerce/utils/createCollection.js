@@ -97,7 +97,7 @@ export async function triggerErrors() {
     }
 }
 
-export async function editClientByEmail(novosDados) {
+export async function editarClientePorEmail(novosDados) {
     const email = 'joao.silva@example.com'
     try {
         const clienteAtualizado = await Cliente.findOneAndUpdate(
