@@ -62,59 +62,59 @@ export async function createInitialData() {
 
 export async function triggerErrors() {
 
-     try {
-       const clienteInvalido = new Cliente({});
-       await clienteInvalido.save();
-     } catch (error) {
-       logError(error);
-       console.error('Erro Cliente:', error.message);
-     }
+  try {
+    const clienteInvalido = new Cliente({});
+    await clienteInvalido.save();
+  } catch (error) {
+    logError(error);
+    console.error('Erro Cliente:', error.message);
+  }
 
-     try {
-       const produtoInvalido = new Produto({
-         nome: 'ab',
-         descricao: 'x'.repeat(300),
-         estoque: -5,
-       });
-       await produtoInvalido.save();
-     } catch (error) {
-       logError(error);
-       console.error('Erro Produto:', error.message);
-     }
+  try {
+    const produtoInvalido = new Produto({
+      nome: 'ab',
+      descricao: 'x'.repeat(300),
+      estoque: -5,
+    });
+    await produtoInvalido.save();
+  } catch (error) {
+    logError(error);
+    console.error('Erro Produto:', error.message);
+  }
 
-     try {
-       const pedidoInvalido = new Pedido({
-         produtos: [
-           {
-             quantidade: 0,
-           }
-         ]
-       });
-       await pedidoInvalido.save();
-     } catch (error) {
-       logError(error);
-       console.error('Erro Pedido:', error.message);
-     }
+  try {
+    const pedidoInvalido = new Pedido({
+      produtos: [
+        {
+          quantidade: 0,
+        }
+      ]
+    });
+    await pedidoInvalido.save();
+  } catch (error) {
+    logError(error);
+    console.error('Erro Pedido:', error.message);
+  }
 }
 
 export async function editarClientePorEmail(novosDados) {
-   const email = 'joao.silva@example.com'
-    try {
-      const clienteAtualizado = await Cliente.findOneAndUpdate(
-        { email },
-        { $set: novosDados },
-        { new: true } 
-      );
+  const email = 'joao.silva@example.com'
+  try {
+    const clienteAtualizado = await Cliente.findOneAndUpdate(
+      { email },
+      { $set: novosDados },
+      { new: true }
+    );
 
-      if (!clienteAtualizado) {
-        console.error(`Cliente com e-mail ${email} não encontrado.`);
-        logError(`Cliente com e-mail ${email} não encontrado.`);
-        return;
-      }
-
-      console.log('Cliente atualizado com sucesso:', clienteAtualizado);
-    } catch (error) {
-      logError(error);
-      console.error('Erro ao atualizar cliente:', error.message);
+    if (!clienteAtualizado) {
+      console.error(`Cliente com e-mail ${email} não encontrado.`);
+      logError(`Cliente com e-mail ${email} não encontrado.`);
+      return;
     }
+
+    console.log('Cliente atualizado com sucesso:', clienteAtualizado);
+  } catch (error) {
+    logError(error);
+    console.error('Erro ao atualizar cliente:', error.message);
+  }
 }

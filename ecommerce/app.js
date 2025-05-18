@@ -6,19 +6,22 @@ async function main() {
   try {
     await ConnectionDB();
     console.log('Conectado ao banco!');
-    await editarClientePorEmail({
-        nome: 'João da Silva',
-        endereco: {
-          rua: 'Rua Nova',
-          numero: '456',
-          cidade: 'Campinas',
-          estado: 'SP',
-          cep: '13000-000'
-    }})
+
     //Funções para testar a criação
-   await createInitialData();
+    await createInitialData();
     //Funções para disparar erros
-   await triggerErrors();   
+    await triggerErrors();
+
+    await editarClientePorEmail({
+      nome: 'João da Silva',
+      endereco: {
+        rua: 'Rua Nova',
+        numero: '456',
+        cidade: 'Campinas',
+        estado: 'SP',
+        cep: '13000-000'
+      }
+    })
 
   } catch (error) {
     logError(error);
