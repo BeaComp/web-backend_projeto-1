@@ -1,0 +1,80 @@
+[2025-05-18T21:44:50.578Z] ValidationError: Cliente validation failed: endereco: O endereço é obrigatório, email: O e-mail é obrigatório, nome: O nome é obrigatório
+    at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schema\subdocument.js:269:14
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[2025-05-18T21:44:50.579Z] ValidationError: Produto validation failed: nome: O nome deve ter no mínimo 3 caracteres, descricao: A descrição pode ter no máximo 200 caracteres, estoque: O estoque não pode ser negativo
+    at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[2025-05-18T21:44:50.580Z] ValidationError: Pedido validation failed: clienteId: O cliente é obrigatório, produtos.0.produtoId: O produto é obrigatório, produtos.0.quantidade: A quantidade deve ser no mínimo 1
+    at Document.invalidate (C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3343:32)
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\document.js:3104:17
+    at C:\Users\peher\Documentos\GitHub\web-backend_projeto\ecommerce\node_modules\mongoose\lib\schemaType.js:1407:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+[2025-06-22T21:13:15.947Z] MongooseError: Operation `clientes.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/ubuntu/web-backend_projeto-1-main/ecommerce/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[2025-06-22T21:13:25.958Z] MongooseError: Operation `clientes.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/ubuntu/web-backend_projeto-1-main/ecommerce/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[2025-06-22T21:33:04.655Z] MongooseError: Operation `produtos.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/ubuntu/ecommerce-completo/web-backend_projeto-1-main/ecommerce/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[2025-06-22T21:33:13.317Z] MongooseError: Operation `produtos.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (/home/ubuntu/ecommerce-completo/web-backend_projeto-1-main/ecommerce/node_modules/mongoose/lib/drivers/node-mongodb-native/collection.js:187:23)
+    at listOnTimeout (node:internal/timers:594:17)
+    at process.processTimers (node:internal/timers:529:7)
+[2025-06-29T20:15:39.548Z] Error: Failed to lookup view "produtos" in views directory "./views"
+    at Function.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\response.js:1049:7)
+    at file:///C:/Users/peher/Downloads/ecommerce-com-templates/ecommerce-completo/web-backend_projeto-1-main/ecommerce/routes/webRoutes.js:54:9
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:280:10)
+[2025-06-29T20:15:42.498Z] Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\response.js:1049:7)
+    at file:///C:/Users/peher/Downloads/ecommerce-com-templates/ecommerce-completo/web-backend_projeto-1-main/ecommerce/routes/webRoutes.js:16:9
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:280:10)
+[2025-06-29T20:15:44.689Z] Error: Failed to lookup view "index" in views directory "./views"
+    at Function.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\application.js:597:17)
+    at ServerResponse.render (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\response.js:1049:7)
+    at file:///C:/Users/peher/Downloads/ecommerce-com-templates/ecommerce-completo/web-backend_projeto-1-main/ecommerce/routes/webRoutes.js:16:9
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\express\lib\router\index.js:280:10)
+[2025-06-29T20:18:14.837Z] MongooseError: Já existe um produto cadastrado com esse nome
+    at Schema._transformDuplicateKeyError (C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\mongoose\lib\schema.js:3045:12)
+    at C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\mongoose\lib\model.js:498:30
+    at C:\Users\peher\Downloads\ecommerce-com-templates\ecommerce-completo\web-backend_projeto-1-main\ecommerce\node_modules\mongoose\lib\model.js:379:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-29T23:48:11.902Z] ValidationError: Produto validation failed: nome: O nome é obrigatório
+    at Document.invalidate (C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\document.js:3343:32)
+    at C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\document.js:3104:17
+    at C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\schemaType.js:1407:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:77:11)
+[2025-06-29T23:49:02.493Z] MongooseError: Já existe um produto cadastrado com esse nome
+    at Schema._transformDuplicateKeyError (C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\schema.js:3045:12)
+    at C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\model.js:498:30
+    at C:\Users\faria\web-backend_projeto-1\ecommerce2\node_modules\mongoose\lib\model.js:379:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)

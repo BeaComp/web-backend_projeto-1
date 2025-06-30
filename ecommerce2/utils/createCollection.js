@@ -1,5 +1,5 @@
 import Cliente from '../models/Cliente.js';
-import Produto from '../models/produto.js';
+import Produto from '../models/Produto.js';
 import Pedido from '../models/Pedido.js';
 import { logError } from './logger.js';
 
